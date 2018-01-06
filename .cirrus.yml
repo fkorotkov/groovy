@@ -1,5 +1,5 @@
 container:
-  image: java:8-jdk
+  image: openjdk:8-jdk
   cpu: 8
   memory: 20G
 
