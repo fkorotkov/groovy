@@ -1,5 +1,5 @@
 container:
-  image: openjdk:8-jdk
+  image: airdock/oracle-jdk:jdk-1.8
   cpu: 8
   memory: 20G
 
