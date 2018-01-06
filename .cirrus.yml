@@ -4,12 +4,12 @@ container:
   memory: 20G
 
 no_caching_task:
-  test_script: gradle test --no-build-cache
+  test_script: gradle dist --no-build-cache
 
 global_caching_task:
   gradle_cache:
     folder: ~/.gradle/caches
-  test_script: gradle test --no-build-cache
+  test_script: gradle dist --no-build-cache
   cleanup_before_cache_script:
     - rm -rf ~/.gradle/caches/$GRADLE_VERSION/
     - find ~/.gradle/caches/ -name "*.lock" -type f -delete
@@ -17,7 +17,7 @@ global_caching_task:
 build_cache_cold_task:
   gradle_cache:
     folder: ~/.gradle/caches
-  test_script: gradle test
+  test_script: gradle dist
   cleanup_before_cache_script:
     - rm -rf ~/.gradle/caches/$GRADLE_VERSION/
     - find ~/.gradle/caches/ -name "*.lock" -type f -delete
@@ -26,7 +26,7 @@ build_cache_warm_task:
   depends_on: build_cache_cold
   gradle_cache:
     folder: ~/.gradle/caches
-  test_script: gradle test
+  test_script: gradle dist
   cleanup_before_cache_script:
     - rm -rf ~/.gradle/caches/$GRADLE_VERSION/
     - find ~/.gradle/caches/ -name "*.lock" -type f -delete
