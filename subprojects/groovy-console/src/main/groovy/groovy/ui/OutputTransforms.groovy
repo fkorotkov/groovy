@@ -54,7 +54,7 @@ class OutputTransforms {
 
         // remaining components get printed to an image
         transforms << { it ->
-            if (it instanceof javax.swing.JComponent) {
+            if (it instanceof JComponent) {
                 Dimension d = it.size
                 if (d.width == 0) {
                     d = it.preferredSize
