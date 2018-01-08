@@ -1,7 +1,7 @@
 container:
   image: gradle:4.4.1-jdk8
   cpu: 4
-  memory: 10G
+  memory: 11G
 
 no_caching_task:
   dist_script: gradle dist --no-build-cache
